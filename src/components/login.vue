@@ -1,5 +1,5 @@
 <template>
-  <div align="center">
+  <div  class="container" align="center">
      <b-form-group
         label="Email address:"
         label-for="input-1">
@@ -11,7 +11,7 @@
           required
         ></b-form-input>
       </b-form-group>
-        <b-form-group  label="Password:" label-for="input-4">
+        <b-form-group  label="Password:" label-for="input-4" >
         <b-form-input
           id="password"
           Type ="password"
@@ -20,9 +20,9 @@
           required
         ></b-form-input>
 </b-form-group>
-    <b-button variant="primary" @click="signin">sign in</b-button>
-    <br>
-    <b-button variant="primary" @click="login">Login </b-button>
+    <b-button variant="primary" style="height:70px ; width:280px" @click="signin">sign in</b-button>
+    <br /><br />
+    <b-button variant="dark" @click="login"><img src="https://สอบบรรจุ.com/wp-content/uploads/2020/11/google_logo.png" ima height="70" width="250" > </b-button>
   </div>
 </template>
 <script>
@@ -46,6 +46,7 @@ export default {
     const user = userCredential.user;
     console.log("user=" + user)
     this.$router.replace('/home')
+    
   })
   .catch((error) => {
     const errorCode = error.code;

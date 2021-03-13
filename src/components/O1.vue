@@ -1,7 +1,7 @@
 <template>
   <div id="app">
   
-    <h class="h3 my-0 me-md-auto fw-normal"><b>Shop-Me.</b></h>
+    <h class="h3 my-0 me-md-auto fw-normal"><b>For You</b></h>
  <br /> <br />
   
   <main class="container">
@@ -124,7 +124,39 @@
 <b-modal id="bv-modal-example" size="lg" hide-footer>
     <div class="d-block text-center">
       <h3><p class="h4 my-0 me-md-auto fw-normal">รายการสินค้า</p>
-  <header  class="d-flex flex-column flex-md-row align-items-mide p-3 px-md-4 mb-3 bg-body border-bottom shadow-sm">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ที่</th>
+      <th scope="col">ภาพ</th>
+      <th scope="col">ชื่อ</th>
+      <th scope="col">จำนวน</th>
+      <th scope="col">ราคา </th>
+      <th scope="col">รวม</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+  <!-- <header  class="d-flex flex-column flex-md-row align-items-mide p-3 px-md-4 mb-3 bg-body border-bottom shadow-sm">
   <b-row cols-lg="1" cols-md="1" cols-sm="1">     
   <div v-if="product1.amount >= 1">
     <p1>{{product1.name}}</p1>
@@ -159,7 +191,9 @@
     <p1> x{{ product6.amount }}</p1>
      <p1> รวม{{ product6.amount*product6.price }}  บาท</p1>
   </div></b-row>
-  </header></h3><div class="my-4"><h4>ราคารวม{{ sum+product1.amount*product1.price+product2.amount*product2.price+
+  </header> -->
+  </h3> 
+  <div class="my-4"><h4>ราคารวม{{ sum+product1.amount*product1.price+product2.amount*product2.price+
     product3.amount*product3.price+product4.amount*product4.price+product5.amount*product5.price+product6.amount*product6.price }} บาท</h4>
  </div>
     </div>
@@ -217,6 +251,9 @@ export default {
       alert(message)
     }
     }
-  }
+  },
+  // methods:{
+  //   addItem:function()
+  // }
 }
 </script>
