@@ -3,16 +3,14 @@ import 'firebase/firestore'
 import 'firebase/auth'
 
 if (!firebase.apps.length) {
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   const firebaseConfig = {
-    apiKey: 'AIzaSyASSw-mbVkL1S4-KwX16uycR7Ue51t6XDE',
-    authDomain: 'cs313-shopshop.firebaseapp.com',
-    projectId: 'cs313-shopshop',
-    storageBucket: 'cs313-shopshop.appspot.com',
-    messagingSenderId: '130038563215',
-    appId: '1:130038563215:web:056591b85ebab3f4e8cbfa',
-    measurementId: 'G-KZQZJ1FLMF',
-  }
+    apiKey: "AIzaSyCQrSpGP0H0RVBlv0lIYT0SC4iyGXUUUqk",
+    authDomain: "projact-present.firebaseapp.com",
+    projectId: "projact-present",
+    storageBucket: "projact-present.appspot.com",
+    messagingSenderId: "491500757468",
+    appId: "1:491500757468:web:62c90cf6072d22d7b22f19"
+  };
   firebase.initializeApp(firebaseConfig)
 }
 export const shopshop = firebase.firestore()

@@ -23,15 +23,11 @@
                   <router-link to="/order"><h3>order</h3></router-link>
                 </b-col></b-nav-item
               >
-              <b-nav-item href="#"
-                ><b-col sm="1">
-                  <router-link to="/about"><h3>About</h3> </router-link>
-                </b-col></b-nav-item
-              >
+             
             </b-navbar-nav>
              <b-navbar-nav class="ml-auto">
         <b-nav-form>
-         <b-button variant="primary" @click="logout">logout </b-button>
+         <b-button variant="light" @click="logout"><img src="https://image.flaticon.com/icons/png/512/277/277210.png" width="60" height="50"></b-button>
         </b-nav-form>
       </b-navbar-nav>
             <!-- Right aligned nav items -->
@@ -86,4 +82,5 @@ export default {
 #nav a.router-link-exact-active {
   color: #f8c10ce7;
 }
+
 </style>
