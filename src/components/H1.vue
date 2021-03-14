@@ -1,49 +1,20 @@
 <template>
   <div class="H1">
-    <b-carousel
-      id="carousel-fade"
-      style="text-shadow: 0px 0px 2px #000"
-      fade
-      indicators
-      img-width="100"
-      img-height="100"
-    >
-      <b-carousel-slide
-        caption=""
-        style="height: 900px"
-        img-src="https://scontent.fbkk10-1.fna.fbcdn.net/v/t1.15752-9/157594397_2631398383819021_7135742903539130309_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=ae9488&_nc_eui2=AeFY3LNPSWPtfLUW6HxJ9e6oxJbX2OOjLQvEltfY46MtC3ey1mTX0Y0wFv9N3U-e2UM44M17kNJoXK2Qbt4bd8jo&_nc_ohc=03LrrulkmZ0AX-Z6tEj&_nc_ht=scontent.fbkk10-1.fna&oh=70f029dac330c4b7e9d390240cb6c06b&oe=606B6E15"
-        ><div class="container">
-          <b-row>
-            <b-col>
-              <b-button
-                squared
-                variant="outline-secondary"
-                style="width: 200px; height: 50px"
-                >order</b-button
-              >
-            </b-col>
-
-            <b-col>
-              <b-button
-                squared
-                variant="outline-secondary"
-                style="width: 200px; height: 50px"
-                ></b-button
-              >
-            </b-col>
-
-            <b-col>
-              <b-button
-                squared
-                variant="outline-secondary"
-                style="width: 200px; height: 50px"
-                >GetStandade</b-button
-              >
-            </b-col>
-          </b-row>
-        </div>
-      </b-carousel-slide>
-    </b-carousel>
+    <b-row align-h="center">
+      
+  <h2 style="font-family:'Serif' ;  font-size:40px">  Wellcome to For You</h2>
+    </b-row >
+    <h1 >_____________________________________________________________</h1>
+    <b-row align-h="center">
+   <b-card-img 
+   src="https://scontent.fbkk22-3.fna.fbcdn.net/v/t1.15752-9/s2048x2048/157341365_451540269601832_8715023197152399426_n.png?_nc_cat=103&ccb=1-3&_nc_sid=ae9488&_nc_eui2=AeFkYLA1lxGEYIa7yI_xWwfkr2wrKufpKImvbCsq5-koib1_ymQYqQ932bY_UmCAHNxPu6n8D-Ma1qP_muD05oQG&_nc_ohc=ZX1WHtkB8mQAX9SMUBa&_nc_ht=scontent.fbkk22-3.fna&_nc_tp=30&oh=a3ef9d8a257333bc9ac09bb0146cf952&oe=606FEF81" 
+        style="height:700px ; width:1000px"
+        alt="Image" class="rounded-0">
+          
+     </b-card-img>
+     </b-row>
+     <b-button variant="outline-dark" href="/order">Order now!!!</b-button>
+    
   </div>
 </template>
 

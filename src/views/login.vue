@@ -6,12 +6,12 @@
 
 <script>
 // @ is an alias to /src
-import Login from '../components/login.vue'
+import login from '../components/login.vue'
 
 export default {
-  name: 'login',
+  name: 'Login',
   components: {
-    Login
+    login
   }
 }
 </script>

@@ -1,16 +1,16 @@
 <template>
   <div id="app">
     <div id="nav">
-      <div>
-        <b-navbar toggleable="md" type="dark" variant="dark">
+      <div id="navbar">
+        <b-navbar  toggleable="md" type="" variant="dark">
           <b-navbar-brand href="">
             <b-col sm="1">
               <router-link to="/home"
                 ><img
-                  src="https://scontent.fbkk22-4.fna.fbcdn.net/v/t1.15752-9/p1080x2048/156506991_443042430255417_227756453410202361_n.png?_nc_cat=109&ccb=1-3&_nc_sid=ae9488&_nc_eui2=AeHYjET9u4i2H_1VLNgZEJ3F3BC-yx7RDjLcEL7LHtEOMi59hLtLYicq5paWifZIE8DWFXxuuPesPv8E0AGpotZW&_nc_ohc=uYAe5uveb6MAX8dC0ac&_nc_ht=scontent.fbkk22-4.fna&_nc_tp=30&oh=d1ccadb74618a890e1790e47e8ca5bda&oe=606A3FD1"
+                  src="https://scontent.fbkk22-3.fna.fbcdn.net/v/t1.15752-9/s2048x2048/157341365_451540269601832_8715023197152399426_n.png?_nc_cat=103&ccb=1-3&_nc_sid=ae9488&_nc_eui2=AeFkYLA1lxGEYIa7yI_xWwfkr2wrKufpKImvbCsq5-koib1_ymQYqQ932bY_UmCAHNxPu6n8D-Ma1qP_muD05oQG&_nc_ohc=ZX1WHtkB8mQAX9SMUBa&_nc_ht=scontent.fbkk22-3.fna&_nc_tp=30&oh=a3ef9d8a257333bc9ac09bb0146cf952&oe=606FEF81"
                   class="d-inline-block align-top"
-                  height="75"
-                  width="75"
+                  height="100"
+                  width="150"
                 />
               </router-link>
             </b-col>
@@ -23,29 +23,46 @@
                   <router-link to="/order"><h3>order</h3></router-link>
                 </b-col></b-nav-item
               >
-             
             </b-navbar-nav>
-             <b-navbar-nav class="ml-auto">
+            <b-navbar-nav class="ml-auto"> 
+        <b-nav-form>
+          <b-img :src="photoURL" rounded="circle"  width="70" height="70"></b-img>
+        </b-nav-form>
+        
+        <b-nav-form>
+       <h6 class="co">{{name}}<br>{{email}}</h6>
+        </b-nav-form>
+      
         <b-nav-form>
          <b-button variant="light" @click="logout"><img src="https://image.flaticon.com/icons/png/512/277/277210.png" width="60" height="50"></b-button>
         </b-nav-form>
       </b-navbar-nav>
             <!-- Right aligned nav items -->
           </b-collapse>
-        </b-navbar>
+        </b-navbar><br/> <br/>
       </div>
     </div>
     
     <router-view /> 
-    <!-- <b-footer>
+    <footer >
+      <b-navbar>
+      
+      </b-navbar>
 
-        <em>Footer Slot</em>
-      </b-footer> -->
+       
+      </footer>
   </div>
 </template>
 <script>
 import firebase from 'firebase/app'
 export default {
+  data(){
+    return{
+    name:"",
+    email:"",
+    photoURL:"",
+    }
+  },
    methods:{
        logout() {
       firebase
@@ -60,7 +77,22 @@ export default {
           console.log(error)
         })
     },
-  }
+  },
+   beforeCreate() {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user != null) {
+        // User is signed in.
+        // ให้แสดงชื่อ email รูป
+        this.name = user.displayName
+        this.email = user.email
+        this.photoURL = user.photoURL
+      } else {
+        // No user is signed in.
+        // กลับไปหน้า login
+        this.$router.replace('/')
+      }
+    })
+  },
 }
 </script>
 
@@ -70,17 +102,21 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #000000;
 }
 #nav {
   padding: 20px;
 }
 #nav a {
-  font-weight: bold;
+  font-weight: bold ;
   color: #fdfdfd;
 }
 #nav a.router-link-exact-active {
   color: #f8c10ce7;
+}
+.co{
+  
+  color: #fdfdfd;
 }
 
 </style>
