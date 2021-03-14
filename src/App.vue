@@ -15,6 +15,7 @@
               </router-link>
             </b-col>
           </b-navbar-brand>
+
           <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
           <b-collapse id="nav-collapse" is-nav>
             <b-navbar-nav>
@@ -24,17 +25,18 @@
                 </b-col></b-nav-item
               >
             </b-navbar-nav>
+
+
             <b-navbar-nav class="ml-auto"> 
-        <b-nav-form>
-          <b-img :src="photoURL" rounded="circle"  width="70" height="70"></b-img>
-        </b-nav-form>
-        
-        <b-nav-form>
-       <h6 class="co">{{name}}<br>{{email}}</h6>
-        </b-nav-form>
+                      <!-- <b-nav-item href="#">
+                <b-col sm="1">
+                  <router-link to="/register"><h3><b-button>login</b-button></h3></router-link>
+                </b-col></b-nav-item>
+           -->
+      
       
         <b-nav-form>
-         <b-button variant="light" @click="logout"><img src="https://image.flaticon.com/icons/png/512/277/277210.png" width="60" height="50"></b-button>
+         <b-button variant="light" @click="logout">logout</b-button>
         </b-nav-form>
       </b-navbar-nav>
             <!-- Right aligned nav items -->
@@ -64,6 +66,7 @@ export default {
     }
   },
    methods:{
+        
        logout() {
       firebase
         .auth()

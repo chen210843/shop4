@@ -5,6 +5,7 @@ import login from '../components/login.vue'
 import address from '../views/address.vue'
 import order from '../views/order.vue'
 import home from '../views/Home.vue'
+import regis from '../views/register.vue'
 
 
 Vue.use(VueRouter)
@@ -34,6 +35,11 @@ const routes = [
     path: '/order',
     name: 'Order',
     component: order
+  },
+  {
+    path: '/register',
+    name: 'about',
+    component: regis
   }
  
 ]

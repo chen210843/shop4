@@ -121,7 +121,8 @@
     </div>
     </div>
   </div>
-   <b-button  align="center" block variant="primary" @click="$bvModal.show('bv-modal-example')">ยืนยัน</b-button>
+   <b-button  align="center" style="width:300px" variant="primary" @click="$bvModal.show('bv-modal-example')">ยืนยัน</b-button>
+   <br>
 <b-modal id="bv-modal-example" size="lg" hide-footer>
     <div class="d-block text-center">
       <h3><p class="h4 my-0 me-md-auto fw-normal">รายการสินค้า</p>
@@ -166,11 +167,12 @@
  
  </div>
     </div>
-    <b-button variant="light" block @click="addData" href="/about" >สั่งซื้อ</b-button>
+    <b-button variant="light" block @click="addData"  ><router-link to="/about" >สั่งซื้อ</router-link></b-button>
   </b-modal>
-   <b-button variant="danger" block value="Reset" onClick="javascript:location.reload();">Resset</b-button>
+   <b-button variant="danger" style="width:300px" onclick="window.location.reload()">Refresh</b-button>
   
   </main>
+  <router-view /> 
   </div>
 </template> 
 
@@ -179,6 +181,7 @@ import { shopshop } from "/plugins/firebaseConfig.js";
 import firebase from 'firebase/app'
 
 export default {
+ 
   name: 'App',
   data(){
     return{
@@ -262,7 +265,6 @@ export default {
         })
         .then(() => {
           console.log("Document successfully written!");
-          alert("Success")
         })
         .catch((error) => {
           console.error("Error writing document: ", error);
@@ -289,7 +291,7 @@ export default {
         })
         .then(() => {
           console.log("Document successfully written!");
-          alert("Success")
+        
         })
         .catch((error) => {
           console.error("Error writing document: ", error);

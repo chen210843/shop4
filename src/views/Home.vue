@@ -15,7 +15,7 @@ export default {
   },
   beforeCreate() {
     firebase.auth().onAuthStateChanged((user) => {
-      if (user != null) {
+      if (user != null || user.name !=null) {
         // User is signed in.
         // ให้แสดงชื่อ email รูป
         this.$router.replace("/Home")

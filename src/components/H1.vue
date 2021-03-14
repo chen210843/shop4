@@ -13,8 +13,8 @@
           
      </b-card-img>
      </b-row>
-     <b-button variant="outline-dark" href="/order">Order now!!!</b-button>
-    
+    <router-link to="/order"> <b-button variant="outline-dark">Order now!!!</b-button></router-link>
+    <router-view />
   </div>
 </template>
 

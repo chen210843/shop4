@@ -1,26 +1,59 @@
 <template>
   <div  class="container" align="center">
-     <b-form-group
-        label="Email address:"
-        label-for="input-1">
-      <b-form-input
-          id="email"
-          v-model="email"
-          type="email"
-          placeholder="Enter email"
-          required
-        ></b-form-input>
-      </b-form-group>
-        <b-form-group  label="Password:" label-for="input-4" >
-        <b-form-input
-          id="password"
-          Type ="password"
-          v-model="password"
-          placeholder="Enter password"
-          required
-        ></b-form-input>
-</b-form-group>
-    <b-button variant="primary" style="height:70px ; width:280px" @click="signin">sign in</b-button>
+  <!-- <v-card>
+    <v-card-title>
+      <v-spacer />
+      ลงทะเบียน
+      <v-spacer />
+    </v-card-title>
+    <v-form>
+      <v-row style="margin: 0px">
+        <v-col cols="5">
+          <v-subheader> Name : </v-subheader>
+        </v-col>
+        <v-col cols="6">
+          <v-text-field outlined v-model="user.name" />
+        </v-col>
+      </v-row>
+      <v-row style="margin: 0px">
+        <v-col cols="5">
+          <v-subheader> LastName : </v-subheader>
+        </v-col>
+        <v-col cols="6">
+          <v-text-field outlined v-model="user.lastname" />
+        </v-col>
+      </v-row>
+      <v-row style="margin: 0px">
+        <v-col cols="5">
+          <v-subheader> Telephone : </v-subheader>
+        </v-col>
+        <v-col cols="6">
+          <v-text-field outlined v-model="user.telephone" />
+        </v-col>
+      </v-row>
+      <v-row style="margin: 0px">
+        <v-col cols="5">
+          <v-subheader> Password : </v-subheader>
+        </v-col>
+        <v-col cols="6">
+          <v-text-field
+            outlined
+            v-model="user.password"
+            :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+            :type="show1 ? 'text' : 'password'"
+            @click:append="show1 = !show1"
+          />
+        </v-col>
+      </v-row>
+      <v-card-actions>
+        <v-spacer />
+        <v-btn color="green" @click="addUser"> ลงทะเบียน </v-btn>
+        <v-spacer />
+      </v-card-actions>
+    </v-form>
+  </v-card> -->
+
+
     <br /><br />
     <b-button variant="dark" @click="login"><img src="https://สอบบรรจุ.com/wp-content/uploads/2020/11/google_logo.png" ima height="70" width="250" > </b-button>
   </div>
@@ -32,28 +65,40 @@ import { auth } from '/plugins/firebaseConfig.js'
 export default {
   data(){
     return{
-      email:"",
-      password:""
+       show1: false,
+      user: {
+        name: "",
+        lastname: "",
+        telephone: "",
+        password: "",
+      },
+      // email:"",
+      // password:""
     }
   },
 
   methods: {
-    signin(){
-    auth
-    .createUserWithEmailAndPassword(this.email, this.password)
-    .then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-    console.log("user=" + user)
-    this.$router.replace('/home')
+  //   signin(){
+  //   auth
+  //   .createUserWithEmailAndPassword(this.email, this.password)
+  //   .then((userCredential) => {
+  //   // Signed in 
+  //   const user = userCredential.user;
+  //   console.log("user=" + user)
+  //   this.$router.replace('/home')
     
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    console.log("error=" +errorCode )
-    // ..
-  });
-  },
+  // })
+  // .catch((error) => {
+  //   const errorCode = error.code;
+  //   console.log("error=" +errorCode )
+  //   // ..
+  // });
+  // },
+     addUser() {
+      this.$store.dispatch("addUser", this.user)
+      .then(this.$emit("colse"));
+      alert("success")
+    },
     login() {
      const provider = new firebase.auth.GoogleAuthProvider()
       auth 
